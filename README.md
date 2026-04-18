@@ -85,5 +85,3 @@ $env:PYTHONPATH="backend"; .\.venv\Scripts\python.exe scripts\verify_system.py
 -   **Idempotency**: `event_id` tracking ensures signals are never double-processed.
 
 ---
-
-*Aegis is an Advanced Agentic Prototype built by Antigravity.*
