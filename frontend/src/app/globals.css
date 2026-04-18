@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Lumina Slate - Light Palette */
+  --background: #fbfbfc; /* Neutral-50 */
+  --foreground: #09090b; /* Zinc-950 */
+  --card: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.06);
+  
+  --accent-primary: #4f46e5;
+  --accent-secondary: #059669;
+  --accent-danger: #e11d48;
+  --accent-warn: #d97706;
+  
+  --depth-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-danger: var(--accent-danger);
+  --color-accent-warn: var(--accent-warn);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; /* Standard Professional Size */
+  @apply antialiased overflow-x-hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Outfit', sans-serif;
+  @apply tracking-tight font-extrabold text-slate-950; /* Increased weight */
+}
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; } /* Slightly larger */
+h4 { font-size: 0.95rem; }
+
+/* Global Typography Calibration */
+.text-xs { font-size: 0.78rem !important; }
+.text-sm { font-size: 0.88rem !important; }
+
+/* High-Quality Surfaces */
+.aeon-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04);
+  @apply rounded-xl transition-all duration-300;
+}
+
+.aeon-card-hover:hover {
+  @apply border-indigo-500/20 -translate-y-0.5 shadow-xl shadow-slate-100;
+}
+
+/* Precise Buttons */
+.btn-primary {
+  @apply bg-accent-primary hover:bg-indigo-700 text-white font-bold py-2.5 px-5 rounded-xl 
+         transition-all duration-300 shadow-sm active:scale-95 text-[11px] uppercase tracking-widest;
+}
+
+.btn-secondary {
+  @apply bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold py-2.5 px-5 rounded-xl 
+         border border-slate-200 transition-all active:scale-95 text-[11px] uppercase tracking-widest;
+}
+
+.btn-danger {
+  @apply bg-rose-50 hover:bg-rose-100 text-accent-danger font-bold py-2.5 px-5 rounded-xl 
+         border border-rose-200 transition-all active:scale-95 text-[11px] uppercase tracking-widest;
+}
+
+/* Minimalist Inputs */
+.aeon-input {
+  @apply bg-white border border-slate-200 rounded-xl px-4 py-3 text-[12px] 
+         focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-500/30 
+         transition-all placeholder:text-slate-400 text-slate-800;
+}
+
+/* Timeline Thread */
+.timeline-thread {
+  @apply relative pl-8 border-l-2 border-slate-100 ml-2 py-2;
+}
+
+.timeline-dot {
+  @apply absolute -left-[9px] top-4 w-4 h-4 rounded-full border-2 border-white bg-slate-300;
+}
+
+/* Animations */
+@keyframes live-pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.animate-live {
+  animation: live-pulse 2s infinite ease-in-out;
+}
+
+/* Scrollbar Integration */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.06);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.12);
+}
+
+/* High-Contrast Status */
+.status-pill {
+  @apply px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest border flex items-center gap-2;
+}
