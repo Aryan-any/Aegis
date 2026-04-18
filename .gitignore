@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+
+# Temporal
+temporal.exe
+temporal.tar.gz
+
+# Database
+*.db
+*.sqlite
+
+# Logs
+*.log
+system.log
+system_v*.log
+worker*.log
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Next.js
+.next/
+out/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

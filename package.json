@@ -1,0 +1,16 @@
+{
+  "name": "project-sagepilot",
+  "version": "1.0.0",
+  "description": "Orchestration for SagePilot POC",
+  "scripts": {
+    "install:all": "npm install && cd backend && pip install -r requirements.txt && cd ../frontend && npm install",
+    "dev:api": "cd backend && uvicorn main:app --reload --port 8000",
+    "dev:worker": "cd backend && python worker.py",
+    "dev:ui": "cd frontend && npm run dev",
+    "dev": "npx concurrently --kill-others \"npm run dev:api\" \"npm run dev:worker\" \"npm run dev:ui\"",
+    "temporal:start": "temporal server start-dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
